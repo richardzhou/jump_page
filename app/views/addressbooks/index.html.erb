@@ -1,0 +1,72 @@
+<div>
+    <%= link_to 'New Link', new_addressbook_path %>
+    <%= link_to 'Manage Users', {:controller => 'netldap', :action => 'index'} %>
+    <%= content_tag(:a, 'Log Out', :href => '/netldap/authenticate.html') %>
+</div>
+<h1>Extranet Office Links</h1>
+<!--
+<table>
+<% @addressbooks.each do |addressbook| %>
+  <tr>
+    <%= content_tag(:td, content_tag(:a, addressbook.name, :href => addressbook.url)) %>
+    <td><a href="<%= addressbook.url %>"><%= addressbook.name %></a></td>
+    <td> | </td>
+    <td><%= addressbook.url %></td>
+    <td><%= link_to 'Show', addressbook %></td>
+    <td><%= link_to 'Edit', edit_addressbook_path(addressbook) %></td>
+    <td><%= link_to 'Destroy', addressbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+-->
+<ul>
+<% @addressbooks.each do |addressbook| %>
+   <li>
+    <%= content_tag(:a, addressbook.name, :href => addressbook.url, :target=>"_blank") %> |
+    <font><%= addressbook.url %></font>
+    <font><%= link_to 'Show', addressbook %></font>
+    <font><%= link_to 'Edit', edit_addressbook_path(addressbook) %></font>
+    <font><%= link_to 'Destroy', addressbook, method: :delete, data: { confirm: 'Are you sure?' } %></font>  
+   </li>
+<% end %>
+</ul>
+<br />
+<h3>Development Environment (Windows IDE - Terminal Server)</h3>
+<ul>
+   <li>
+      <%= content_tag(:a, "DEV1 - Tomcat Application Server (Developer Middleware Test)", :href => "http://dev1.aicuretechnologies.com:9080", :target=>"_blank") %> |
+      <font>http://dev1.aicuretechnologies.com:9080</font>
+   </li>
+</ul>
+<br />
+<h3>Development Environment (Linux)</h3>
+<ul>
+  <li>
+    <%= content_tag(:a, "DEV1VIDEO - Dashboard - SSL", :href => "https://dev.myclinicaltrialdashboard.com", :target=>"_blank") %> |
+    <font>https://dev.myclinicaltrialdashboard.com</font>
+  </li>
+  <li>
+    <%= content_tag(:a, "DEV1VIDEO - App (Tomcat J2EE)", :href => " http://dev1video.aicuretechnologies.com:8080", :target=>"_blank") %> |
+    <font>http://dev1video.aicuretechnologies.com:8080</font>
+</li>
+</ul>
+<br />
+<h3>Quality Assurance (QA) Environment (Linux)</h3>
+<ul>
+  <li>QA - Linux Hosts</li>
+  <li>QA - Load Balancer HTTP (Placeholder)</li>
+  <li>QA - Video NGINX HTTP (Placeholder)</li>
+  <li>QA - Tomcat1 J2EE (Placeholder)</li>
+  <li>QA - Database (MySQL) (Placeholder)</li>
+</ul>
+<br />
+<h3>Production (PROD) Environment (Linux)</h3>
+<ul>
+  <li>PROD - Linux Hosts</li>
+  <li>PROD - Load Balancer HTTP (Placeholder)</li>
+  <li>PROD - Video NGINX HTTP (Placeholder)</li>
+  <li>PROD - Tomcat1 J2EE (Placeholder)</li>
+  <li>PROD - Database (MySQL) (Placeholder)</li>
+</ul>
+<hr>
+<font style="font-size:10px;">2012 Ai Cure Technologies, Inc. All Rights Reserved</font>

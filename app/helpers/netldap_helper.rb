@@ -1,0 +1,2 @@
+module NetldapHelper
+end

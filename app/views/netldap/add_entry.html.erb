@@ -1,0 +1,56 @@
+<html>
+<body>
+
+<div>
+  <!-- start_form_tag -->
+  <%= form_tag  :action => 'add_entry' do %>
+  <table border='0' cellspacing='0' cellpadding='5'>
+    <tr>
+      <caption>Add New User</caption>
+    </tr>
+
+    <tr>
+      <td>First Name*</td>
+      <td><%= text_field_tag(:gn) %></td>
+    </tr>
+    <tr>
+      <td>Last Name*</td>
+      <td><%= text_field_tag(:sn) %></td>
+    </tr>
+    <tr>
+      <td>Password*</td>
+      <td><%= text_field_tag(:userPassword) %></td>
+    </tr>
+    <!--
+    <tr>
+      <td>Title</td>
+      <td><%= text_field_tag(:title) %></td>
+    </tr>
+    <tr>
+      <td>Telephone Number</td>
+      <td><%= text_field_tag(:telephoneNumber) %></td>
+    </tr>
+
+    <tr>
+      <td>Department</td>
+      <td><%= text_field_tag(:physicalDeliveryOfficeName) %></td>
+    </tr>
+
+
+    <tr>
+      <td>Fax Number</td>
+      <td><%= text_field_tag(:facsimileTelephoneNumber) %></td>
+    </tr>
+    -->
+
+    <tr>
+      <td><input type="submit" value="Submit"></td>
+    </tr>
+
+  </table>
+  <% end %>
+</div>
+* indicates a required field.<br />
+<%= link_to 'Back', addressbooks_path %>
+</body>
+</html>

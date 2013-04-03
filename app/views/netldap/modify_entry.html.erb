@@ -1,0 +1,37 @@
+<html>
+<body>
+
+<div>
+  Entry was successfully updated.
+<!--
+  <%= form_tag :action => "modify_entry" do %>
+    <table border='0' cellspacing='0' cellpadding='5'>
+      <tr>
+        <caption>
+          Modify Directory Entry
+        </caption>
+      </tr>
+      <tr>
+      <td>Last Name</td>
+      <td><%= text_field_tag(:sn,@sn,:disabled=>true) %></td>
+      </tr>
+      <tr>
+        <td>Username</td>
+        <td><%= text_field_tag(:cn,@cn,:disabled=>true) %></td>
+      </tr>
+      <tr>
+        <td>New Password(at least 5 digits)*</td>
+        <td><%= text_field_tag(:userPassword) %></td>
+      </tr>
+
+      <tr>
+        <td><input type="submit" value="Submit"></td>
+      </tr>
+
+    </table>
+  <% end %>
+-->
+</div>
+<%= link_to 'Back', addressbooks_path %>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+<body>
+
+<div>
+  <!-- start_form_tag -->
+  <%= form_tag  :action => 'authenticate' do %>
+      <table border='0' cellspacing='0' cellpadding='5'>
+        <tr>
+          <caption>Please Log In</caption>
+        </tr>
+        <tr>
+          <td>username*</td>
+          <td><%= text_field_tag(:cn) %></td>
+        </tr>
+        <tr>
+          <td>password*</td>
+          <td><%= password_field_tag(:userPassword) %></td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Submit"></td>
+        </tr>
+      </table>
+  <% end %>
+</div>
+* indicates a required field.<br />
+<%= if @success==0
+     'login failed'
+   end
+%>
+<div style="border:1px solid #000;display:none;">
+dn: <%= @dn %><br />
+cn: <%= @cn %><br />
+userPassword: <%= @userPassword %><br />
+success: <%= @success==0 ? 'failed' : 'successful' %><br />
+</div>
+</body>
+</html>

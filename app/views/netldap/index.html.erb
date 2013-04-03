@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title>Directory Entry List</title>
+</head>
+
+<body>
+<h1>Directory Entry List</h1>
+
+<%= form_tag :action=>"index" do %>
+<table>
+<!--
+  <tr>
+    <td>First Name*</td>
+    <td><%= text_field_tag(:firstName) %></td>
+  </tr>
+  <tr>
+    <td>Last Name*</td>
+    <td><%= text_field_tag(:lastName) %></td>
+  </tr>
+-->
+  <tr><td><%= submit_tag "Show All",:id=>"list" %></td></tr>
+</table>
+<% end %>
+<%= link_to 'Create New User', add_entry_path %> | <%= link_to 'Back', addressbooks_path %>
+<h3> Directory Entries</h3>
+<div id="directory_entry"></div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("#list").click(function(){
+            //alert(1);
+            // make a POST call and replace the content
+          /*
+            $.post("<%= search_entry_path %>", function(data){
+               alert(data);
+               $("#directory_entry").html('The Direct Entry You Are Searching:<br />'+data);
+            },'html');
+          */
+
+            $.ajax({
+                type: 'POST',
+                //url: '/directory/search_entry',
+                url: '<%= index_path %>',
+                data: {/*firstName: $("#firstName").val(),lastName: $("#lastName").val()*/},
+                success: function(data){$("#directory_entry").html('<br />'+data);/*alert(data);*/},
+                dataType: "html"
+            });
+
+            return false      // very important
+
+        });
+    })
+
+</script>
+</body>
+
+</html>

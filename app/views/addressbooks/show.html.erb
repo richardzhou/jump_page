@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @addressbook.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @addressbook.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_addressbook_path(@addressbook) %> |
+<%= link_to 'Back', addressbooks_path %>
